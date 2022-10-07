@@ -1,6 +1,6 @@
 import { MdClose } from "react-icons/md";
 import { ContainerModal } from "./styles";
-import { Title } from "../Login/styles";
+import { Title } from "../TitleForm/styles";
 import { Label } from "../LabelForm/styles";
 import { Button } from "../Form/styles";
 import { ErrorVali } from "../ErrorValidator/styles";

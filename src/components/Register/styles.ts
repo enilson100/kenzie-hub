@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const DivCadastro = styled.div`
+export const DivRegister = styled.div`
   width: 100%;
   display: flex;
+  padding: 20px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -74,7 +75,7 @@ export const DivCadastro = styled.div`
   }
 `;
 
-export const ButtonCadastrar = styled.button`
+export const ButtonRegister = styled.button`
   box-sizing: border-box;
   display: flex;
   justify-content: center;

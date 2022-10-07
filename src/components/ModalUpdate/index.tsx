@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { DivButton, ButtonDelete } from "./styles";
-import { Title } from "../Login/styles";
+import { Title } from "../TitleForm/styles";
 import { Label } from "../LabelForm/styles";
 import { ErrorVali } from "../ErrorValidator/styles";
 import { ContainerModal } from "../ModalRegister/styles";
 import { MdClose } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ButtonCadastrar } from "../Register/styles";
+import { ButtonRegister } from "../Register/styles";
 import { ITech, TechContext } from "../../contexts/TechContext";
 
 import schema from "../../validators/updateTech";
@@ -55,7 +55,7 @@ const ModalUpdate = () => {
             <ErrorVali>{errors.status?.message}</ErrorVali>
           </div>
           <DivButton>
-            <ButtonCadastrar type="submit">Salvar alterações</ButtonCadastrar>
+            <ButtonRegister type="submit">Salvar alterações</ButtonRegister>
             <ButtonDelete
               type="button"
               onClick={deleteTech}

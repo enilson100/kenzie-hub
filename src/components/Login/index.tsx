@@ -1,23 +1,21 @@
-import {
-  DivForm,
-  FormStyle,
-  DivInput,
-  ContainerForm,
-  Title,
-  Input,
-  Label,
-  Button,
-  ErrorVali,
-} from "./styles";
-import Logo from "../../assets/Logo.svg";
+import { Button } from "./styles";
+import { ContainerForm } from "../ContainerForm/styles";
+import { Title } from "../TitleForm/styles";
+import { FormStyle } from "../Form/styles";
+import { DivForm } from "../DivForm/styles";
+import { DivInput } from "../InputForm/styles";
+import { InputForm } from "../InputForm/styles";
+import { Label } from "../LabelForm/styles";
+import { ErrorVali } from "../ErrorValidator/styles";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import schema from "../../validators/registerUser";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { IUserLogin } from "../../services/loginUser";
+import schema from "../../validators/registerUser";
+import Logo from "../../assets/Logo.svg";
 
 const FormLogin = () => {
   const [visible, setVisible] = useState(false);
@@ -46,7 +44,7 @@ const FormLogin = () => {
         <FormStyle className="form">
           <DivInput>
             <Label>Email</Label>
-            <Input
+            <InputForm
               id="password"
               type="text"
               placeholder="Digite aqui seu email"
@@ -57,7 +55,7 @@ const FormLogin = () => {
           <DivInput>
             <Label htmlFor="">Senha</Label>
             <div className="div-pass">
-              <Input
+              <InputForm
                 type={visible ? "text" : "password"}
                 placeholder="Digite aqui sua senha"
                 {...register("password")}

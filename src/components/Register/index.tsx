@@ -3,10 +3,10 @@ import { FormStyle } from "../Form/styles";
 import { DivInput } from "../InputForm/styles";
 import { ContainerForm } from "../ContainerForm/styles";
 import { Title } from "../TitleForm/styles";
-import { Input } from "../Login/styles";
+import { InputForm } from "../InputForm/styles";
 import { Label } from "../LabelForm/styles";
 import { ErrorVali } from "../ErrorValidator/styles";
-import { DivCadastro, ButtonCadastrar } from "./styles";
+import { DivRegister, ButtonRegister } from "./styles";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
@@ -34,7 +34,7 @@ const Register = () => {
 
   return (
     <DivForm>
-      <DivCadastro>
+      <DivRegister>
         <div className="header-cadastro">
           <img src={Logo} alt="Logo" />
           <button className="button-back" onClick={back}>
@@ -49,7 +49,7 @@ const Register = () => {
           <FormStyle onSubmit={handleSubmit(registerUser)}>
             <DivInput>
               <Label>Nome</Label>
-              <Input
+              <InputForm
                 type="text"
                 placeholder="Digite aqui seu nome"
                 {...register("name")}
@@ -58,7 +58,7 @@ const Register = () => {
             </DivInput>
             <DivInput>
               <Label>Email</Label>
-              <Input
+              <InputForm
                 type="email"
                 placeholder="Digite aqui seu email"
                 {...register("email")}
@@ -67,7 +67,7 @@ const Register = () => {
             </DivInput>
             <DivInput>
               <Label>Senha</Label>
-              <Input
+              <InputForm
                 type="password"
                 placeholder="Digite aqui seu senha"
                 {...register("password")}
@@ -76,7 +76,7 @@ const Register = () => {
             </DivInput>
             <DivInput>
               <Label>Confirma senha</Label>
-              <Input
+              <InputForm
                 type="password"
                 placeholder="Confirme aqui sua senha"
                 {...register("confirm_password")}
@@ -85,7 +85,7 @@ const Register = () => {
             </DivInput>
             <DivInput>
               <Label>Bio</Label>
-              <Input
+              <InputForm
                 type="text"
                 placeholder="Digite aqui sua bio"
                 {...register("bio")}
@@ -94,7 +94,7 @@ const Register = () => {
             </DivInput>
             <DivInput>
               <Label>Contato</Label>
-              <Input
+              <InputForm
                 type="text"
                 placeholder="Digite aqui seu contato"
                 {...register("contact")}
@@ -125,10 +125,10 @@ const Register = () => {
               </select>
               <ErrorVali>{errors.course_module?.message}</ErrorVali>
             </DivInput>
-            <ButtonCadastrar type="submit">Cadastrar</ButtonCadastrar>
+            <ButtonRegister type="submit">Cadastrar</ButtonRegister>
           </FormStyle>
         </ContainerForm>
-      </DivCadastro>
+      </DivRegister>
     </DivForm>
   );
 };

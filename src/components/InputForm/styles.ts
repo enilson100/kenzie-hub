@@ -7,6 +7,7 @@ export const InputForm = styled.input`
   border: 1px solid var(--gray-2);
   color: var(--gray-0);
   padding-left: 10px;
+  outline: none;
 
   display: flex;
   flex-direction: row;

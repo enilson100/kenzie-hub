@@ -10,6 +10,7 @@ export const DivForm = styled.div`
   flex-direction: column;
   overflow-x: hidden;
   gap: 15px;
+
   p {
     font-family: var(--font-family);
     font-style: normal;
@@ -21,6 +22,7 @@ export const DivForm = styled.div`
 
   img {
     height: 22px;
+    animation: rubberBand;
   }
 
   @media (min-width: 400px) {
