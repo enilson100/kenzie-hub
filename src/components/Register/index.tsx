@@ -10,13 +10,16 @@ import { DivRegister, ButtonRegister } from "./styles";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { IUserRegister } from "../../services/createUser";
+import { BsEyeSlash, BsEye } from "react-icons/bs";
 import Logo from "../../assets/Logo.svg";
 import schema from "../../validators/cadastrarUser";
 
 const Register = () => {
+  const [visible, setVisible] = useState(false);
+  const [confirmVisible, setConfirmVisible] = useState(false);
   const {
     register,
     handleSubmit,
@@ -67,20 +70,47 @@ const Register = () => {
             </DivInput>
             <DivInput>
               <Label>Senha</Label>
-              <InputForm
-                type="password"
-                placeholder="Digite aqui seu senha"
-                {...register("password")}
-              />
+              <div className="div-pass">
+                <InputForm
+                  type={visible ? "text" : "password"}
+                  placeholder="Digite aqui seu senha"
+                  {...register("password")}
+                />
+                {visible ? (
+                  <BsEye
+                    onClick={() => setVisible(!visible)}
+                    className="eyes"
+                  />
+                ) : (
+                  <BsEyeSlash
+                    onClick={() => setVisible(!visible)}
+                    className="eyes"
+                  />
+                )}
+              </div>
               <ErrorVali>{errors.password?.message}</ErrorVali>
             </DivInput>
             <DivInput>
               <Label>Confirma senha</Label>
-              <InputForm
-                type="password"
-                placeholder="Confirme aqui sua senha"
-                {...register("confirm_password")}
-              />
+              <div className="div-pass">
+                <InputForm
+                  type={confirmVisible ? "text" : "password"}
+                  placeholder="Confirme aqui sua senha"
+                  {...register("confirm_password")}
+                />
+                {confirmVisible ? (
+                  <BsEye
+                    onClick={() => setConfirmVisible(!confirmVisible)}
+                    className="eyes"
+                  />
+                ) : (
+                  <BsEyeSlash
+                    onClick={() => setConfirmVisible(!confirmVisible)}
+                    className="eyes"
+                  />
+                )}
+              </div>
+
               <ErrorVali>{errors.confirm_password?.message}</ErrorVali>
             </DivInput>
             <DivInput>

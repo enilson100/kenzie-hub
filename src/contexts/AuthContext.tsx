@@ -48,6 +48,10 @@ const AuthProvider = ({ children }: IAuthContexProps) => {
     loadUser();
   }, []);
 
+  const goDashboard = () => {
+    navegate("/dashboard", { replace: true });
+  };
+
   const registerUser = (data: IUserRegister) => {
     createUsers(data)
       .then((res) => {
@@ -55,7 +59,7 @@ const AuthProvider = ({ children }: IAuthContexProps) => {
           autoClose: 900,
           theme: "dark",
         });
-        navegate("/", { replace: true });
+        navegate("/login", { replace: true });
       })
       .catch((err) => {
         toast.error("Email já existente!", {
@@ -78,7 +82,7 @@ const AuthProvider = ({ children }: IAuthContexProps) => {
           autoClose: 900,
           theme: "dark",
         });
-        navegate("/dashboard", { replace: true });
+        goDashboard();
         localStorage.setItem("@kenzie-hub:token", token);
       })
       .catch((error) => {
