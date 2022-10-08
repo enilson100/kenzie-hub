@@ -4,13 +4,13 @@ import { DashboardUser } from "./styles";
 import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-
+import Loading from "../Loading";
 import TechProvider from "../../contexts/TechContext";
 
 const Dashboard = () => {
   const { user, loading } = useContext(AuthContext);
 
-  if (loading) return <div>Carregando...</div>;
+  if (loading) return <Loading />;
 
   return user ? (
     <TechProvider>
@@ -20,7 +20,7 @@ const Dashboard = () => {
       </DashboardUser>
     </TechProvider>
   ) : (
-    <Navigate to="/" replace />
+    <Navigate to="/login" replace />
   );
 };
 export default Dashboard;
